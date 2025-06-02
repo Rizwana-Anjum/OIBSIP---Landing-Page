@@ -28,7 +28,7 @@ This single-page responsive site includes:
 
 ## 📬 Contact
 
-Made with ❤️ by **Rizwana Anjum S**  
+Made by **Rizwana Anjum S**  
 📧 rizwanaanjums934@gmail.com  
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/rizwanaanjums)
 
