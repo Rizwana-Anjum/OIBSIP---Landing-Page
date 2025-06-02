@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Landing Page - Internship Task</title>
+<style>
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9f9fb;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  header {
+    background: #004aad;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    cursor: default;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li a {
+    color: #e0e8ff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #fff;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #3f7dfb, #6ca8ff);
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem 4rem 1rem;
+    border-radius: 0 0 80% 80% / 15%;
+    box-shadow: 0 8px 25px rgba(63,125,251, 0.4);
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-primary {
+    background: #fff;
+    color: #3f7dfb;
+    font-weight: 700;
+    padding: 0.75rem 2.5rem;
+    border-radius: 35px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 12px rgba(63,125,251,0.4);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background: #315fcc;
+    color: #fff;
+  }
+
+  /* Features Section */
+  .features {
+    margin: 5rem ;
+    display: flex; /* Changed to flex for better alignment */
+    justify-content: space-between; /* Space between boxes */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2rem; /* Space between boxes */
+  }
+  .feature-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    flex: 1; /* Allow boxes to grow equally */
+    min-width: 280px; /* Minimum width for responsiveness */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  }
+  .feature-icon {
+    background: #3f7dfb;
+    color: white;
+    font-size: 2.4rem;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(63,125,251,0.4);
+  }
+  .feature-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .feature-desc {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* About Section */
+  .about {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+  }
+  .about-text {
+    flex: 1 1 400px;
+  }
+  .about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #004aad;
+    font-weight: 800;
+  }
+  .about-text p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .about-image {
+    flex: 1 1 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(63,125,251,0.3);
+    transition: transform 0.3s ease;
+  }
+  .about-image img {
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .about-image:hover {
+    transform: scale(1.05);
+  }
+
+  /* Testimonial Section */
+  .testimonial {
+    background: #e7f0ff;
+    padding: 3rem 1rem;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto 5rem auto;
+    box-shadow: 0 6px 20px rgba(63,125,251,0.2);
+    font-style: italic;
+    color: #004aad;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  .testimonial strong {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  /* Footer */
+  footer {
+    background: #004aad;
+    color: #c8d7ff;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  footer p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .social-links {
+    margin-top: 1rem;
+  }
+  .social-links a {
+    display: inline-block;
+    margin: 0 0.7rem;
+    color: #c8d7ff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #fff;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .about {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    header .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo" tabindex="0">Rizwana Anjum S</div>
+    <nav>
+      <ul>
+        <li><a href="#features" aria-label="Features section">Skills</a></li>
+        <li><a href="#about" aria-label="About section">About Me</a></li>
+        <li><a href="#testimonial" aria-label="Testimonial section">Internship Experience</a></li>
+        <li><a href="#contact" aria-label="Footer contact details">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" role="banner" aria-label="Introductory content">
+  <h1>Welcome to My Internship Portfolio</h1>
+  <p>I am a final year BCA student at Stella Maris College, currently interning at Oasis InfoByte as a Web Development and Designing Intern.</p>
+  <button class="btn-primary" aria-label="Get in touch with me">Get In Touch</button>
+</section>
+
+<section class="features container" id="features" aria-label="Skills">
+  <article class="feature-box" tabindex="0" aria-labelledby="feature1-title">
+    <div class="feature-icon" aria-hidden="true">💻</div>
+    <h3 class="feature-title" id="feature1-title">Web Development</h3>
+    <p class="feature-desc">Proficient in HTML, CSS, and basic JavaScript to build responsive and user-friendly web pages.</p>
+  </article>
+  <article class="feature-box" tabindex="0" aria-labelledby="feature2-title">
+    <div class="feature-icon" aria-hidden="true">🎨</div>
+    <h3 class="feature-title" id="feature2-title">Web Design</h3>
+    <p class="feature-desc">Understanding of design principles to create visually appealing and modern layouts.</p>
+  </article>
+  <article class="feature-box" tabindex="0" aria-labelledby="feature3-title">
+    <div class="feature-icon" aria-hidden="true">🚀</div>
+    <h3 class="feature-title" id="feature3-title">Learning & Growth</h3>
+    <p class="feature-desc">Eager to learn new technologies and improve skills through real-world internship experience.</p>
+  </article>
+</section>
+
+<section class="about container" id="about" aria-label="About Me">
+  <div class="about-text">
+    <h2>About Me</h2>
+    <p>I am pursuing my Bachelor of Computer Applications (BCA) at Stella Maris College. This internship at Oasis InfoByte is my first step into the web development and design industry.</p>
+    <p>My goal is to build a strong foundation in web technologies and deliver meaningful digital experiences while learning from experienced professionals.</p>
+  </div>
+  <div class="about-image" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="College study and internship illustration" />
+  </div>
+</section>
+
+<section class="testimonial" id="testimonial" aria-label="Internship Experience" tabindex="0">
+  “Working as a web development and designing intern at Oasis InfoByte has been an amazing learning experience. I am gaining practical skills and real project insights that college alone can't teach.”
+  <strong>- My Internship Journey</strong>
+</section>
+
+<footer id="contact">
+  <p>Contact me: <a href="mailto:rizwanaanjums934@gmail.com">rizwanaanjums934@gmail.com</a> | +91 1234567890</p>
+  <div class="social-links" aria-label="Social media links">
+    <a href="#" aria-label="Visit my Facebook" title="Facebook" tabindex="0">📘</a>
+    <a href="#" aria-label="Visit my Twitter" title="Twitter" tabindex="0">🐦</a>
+    <a href="https://www.linkedin.com/in/rizwanaanjums" aria-label="Visit my LinkedIn" title="LinkedIn" tabindex="0">🔗</a>
+  </div>
+  <p>© 2025 Internship Task1 - Stella Maris College</p>
+</footer>
+
+</body>
+</html>
