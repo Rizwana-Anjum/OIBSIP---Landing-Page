@@ -28,7 +28,7 @@ This single-page responsive site includes:
 
 ## 📹 Video 
 - I have added a video preview
-- To download it click view raw 
+- To download it click - video - view file - view raw 
 
 ## 📬 Contact
 
