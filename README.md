@@ -26,6 +26,10 @@ This single-page responsive site includes:
 - Accessibility and ARIA labels
 - Organizing a clean, modern landing page design
 
+## 📹 Video 
+- I have added a video preview
+- To download it click view raw 
+
 ## 📬 Contact
 
 Made by **Rizwana Anjum S**  
